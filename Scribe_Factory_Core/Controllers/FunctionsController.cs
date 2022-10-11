@@ -95,7 +95,7 @@ namespace Scribe_Factory_Core.Controllers
                 aws.ConvertTextToSpeech(text, voice.LanguageCode, voice.Name, voice.Engine.FirstOrDefault(), currentUser.User.Id + "temp.mp3");
 
 
-                return new JsonResult(Request.Host.Value+"/" + currentUser.User.Id + "temp.mp3");
+                return new JsonResult("https://"+Request.Host.Value+"/" + currentUser.User.Id + "temp.mp3");
             }
             catch
             {

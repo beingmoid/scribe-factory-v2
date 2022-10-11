@@ -86,7 +86,7 @@
                                     <path d="M6.271 5.055a.5.5 0 0 1 .52.038l3.5 2.5a.5.5 0 0 1 0 .814l-3.5 2.5A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445z" />
                                 </svg>
                             </button>
-                            <audio controls>
+                            <audio controls id="player">
                                 <source id="AudioStream" src="temp.mp3" type="audio/mpeg">
                             </audio>
                             <span class="ply-span"><small>350 / 250</small></span>
@@ -229,6 +229,10 @@
                                     if (response != false) {
                                         debugger;
                                         $('#AudioStream')[0].src = response;
+                                        $('#player')[0].load();
+                                        $('#player')[0].play();
+
+                                        $/*('#AudioStream')[0].oncanplaythrough=audio[0].play();*/
                                     }
                                     else {
                                         document.getElementById('LoginError').style.display = 'block';
